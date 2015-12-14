@@ -399,7 +399,9 @@ package starling.events
                 if (simulateMultitouch && wasCtrlDown != mCtrlDown)
                 {
                     mTouchMarker.visible = mCtrlDown;
-                    mTouchMarker.moveCenter(mStage.stageWidth/2, mStage.stageHeight/2);
+                    var mx:Number = Starling.current.nativeStage.mouseX;
+                    var my:Number = Starling.current.nativeStage.mouseY;
+                    mTouchMarker.moveCenter(mx, my);
                     
                     var mouseTouch:Touch = getCurrentTouch(0);
                     var mockedTouch:Touch = getCurrentTouch(1);
